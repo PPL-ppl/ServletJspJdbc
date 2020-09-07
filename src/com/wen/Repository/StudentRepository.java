@@ -1,6 +1,7 @@
 package com.wen.Repository;
 
 import com.wen.Entity.Student;
+import com.wen.Util.C3p0JdbcTools;
 import com.wen.Util.JDBCTools;
 
 import java.sql.*;
@@ -18,7 +19,7 @@ public class StudentRepository {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            connection = JDBCTools.getConnection();
+            connection = C3p0JdbcTools.getConnection();
             String sql = "select * from student";
             statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery();
@@ -110,8 +111,8 @@ public class StudentRepository {
             statement.setDouble(2, score);
             statement.setInt(3, id);
             statement.executeUpdate();
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         } finally {
             JDBCTools.release(connection, statement, null);
         }
