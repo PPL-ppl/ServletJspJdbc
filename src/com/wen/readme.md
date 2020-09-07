@@ -68,4 +68,9 @@ XML格式配置
     </named-config>
 </c3p0-config>
 ```
-c3p0-config文件名必须这个  使用时用name这个名字 <named-config name="testc3p0">
+c3p0-config文件名必须这个  使用时用name这个名字 <named-config name="testc3p0">  
+DBUtils  
+DBUtils帮助开发者完成数据的封装(结果集映射到对象)  
+1. 导入jar包  
+commons-dbutils-1.7  
+2. 使用

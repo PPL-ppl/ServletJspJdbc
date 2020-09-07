@@ -53,3 +53,24 @@ public class DataSource {
 }
 ```
 XML格式配置  
+```html
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <named-config name="testc3p0">
+        <property name="user">root</property>
+        <property name="password">123456</property>
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/servlettest?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai</property>
+        <property name="acquireIncrement">5</property>
+        <property name="initialPoolSize">5</property>
+        <property name="minPoolSize">5</property>
+        <property name="maxPoolSize">5</property>
+    </named-config>
+</c3p0-config>
+```
+c3p0-config文件名必须这个  使用时用name这个名字 <named-config name="testc3p0">  
+DBUtils  
+DBUtils帮助开发者完成数据的封装(结果集映射到对象)  
+1. 导入jar包  
+commons-dbutils-1.7  
+2. 使用
